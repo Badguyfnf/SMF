@@ -265,13 +265,9 @@ class ResultScreen extends MusicBeatSubstate {
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
     }
    override function update(elapsed:Float)
-   #if android
-        addVirtualPad(A);
-        _virtualpad.y = -44;
-        #end
         {
         super.update(elapsed);
-        if (FlxG.keys.justPressed.ENTER){
+        if (FlxG.keys.mousePressed.left){
             close();
             force = true;
             PlayState.instance.endSong();
